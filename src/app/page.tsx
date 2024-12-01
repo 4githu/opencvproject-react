@@ -96,8 +96,8 @@ const Frame = (): JSX.Element => {
           </div>
         </div>
         <div className = "text-[20px]">
-          <button onClick={() => {setImagePath("open_yp.bmp"); setModalVisible(true)}}>이미지 1 </button>
-          <button onClick={() => {setImagePath("open_np.bmp"); setModalVisible(true)}}> 이미지 2</button>
+          <button onClick={() => {setImagePath("/open_yp.bmp"); setModalVisible(true)}}>이미지 1 </button>
+          <button onClick={() => {setImagePath("/open_np.bmp"); setModalVisible(true)}}> 이미지 2</button>
         </div>
 
         <div className="absolute w-[987px] h-[628px] top-[345px] left-[100px] bg-[#fcddbe]">
