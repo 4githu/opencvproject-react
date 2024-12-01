@@ -5,8 +5,13 @@ import Image from "next/image";
 const Frame = (): JSX.Element => {
   const [modalVisible, setModalVisible] = useState(false);
   const [imagePath, setImagePath] = useState("open_yp.bmp");
-  const [boxColors, setBoxColors] = useState({"a605": "#d9d9d9", "a606":  "#d9d9d9", "a608": "#d9d9d9"}); // 색상 상태 객체 추가
+  const [boxColors, setBoxColors] = useState<{ [key: string]: string }>({
+    "a605": "#d9d9d9",
+    "a606": "#d9d9d9",
+    "a608": "#d9d9d9",
+  });
   const [generalBoxColors, setGeneralBoxColors] = useState({"color" : 'bg-green-200', "text" : "시작버튼", "people" : "?"}); 
+
 
   const handleClick = async (id: string) => {
     console.log("클릭 이벤트 발생");
@@ -67,13 +72,14 @@ const Frame = (): JSX.Element => {
 
     console.log("data:", data);
 
-    const newBoxColors: { [key: string]: string } = {}; // 동적 객체 정의
+    const newBoxColors: { [key: string]: string } = { ...boxColors }; // 기존 색상 복사
 
-    for (const id in data.ateendence) { // ID를 사용하여 순회
+    for (const id in data.ateendence) {
         newBoxColors[id] = data.ateendence[id] ? "#00ff00" : "#ff0000"; // 색상 업데이트
     }
 
-    setBoxColors(newBoxColors); // 상태 업데이트
+    // 상태 업데이트
+    setBoxColors(newBoxColors); // setBoxColors가 객체를 받도록 설정
     setGeneralBoxColors({"color" : "bg-green-200", "text" : data.howtogo, "people" : String(data.people)});
   };
 
