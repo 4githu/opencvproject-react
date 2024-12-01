@@ -6,7 +6,7 @@ const Frame = (): JSX.Element => {
   const [modalVisible, setModalVisible] = useState(false);
   const [imagePath, setImagePath] = useState("open_yp.bmp");
   const [boxColors, setBoxColors] = useState({a605: "#d9d9d9", a606:  "#d9d9d9", a608: "#d9d9d9"}); // 색상 상태 객체 추가
-  const [generalBoxColors, setGeneralBoxColors] = useState({"color" : 'bg-green-200', "text" : "시작버튼", "people" : 0}); 
+  const [generalBoxColors, setGeneralBoxColors] = useState({"color" : 'bg-green-200', "text" : "시작버튼", "people" : "모름"}); 
 
   const handleClick = async (id: string) => {
     console.log("클릭 이벤트 발생");
@@ -40,7 +40,11 @@ const Frame = (): JSX.Element => {
 
   const generalHandleClick = async () => {
     console.log("클릭 이벤트 발생");
-    setGeneralBoxColors({"color" : "bg-red-200", "text" : "검사중", "people" : "검사중"});
+    setGeneralBoxColors({
+        color: "bg-red-200",
+        text: "검사중",
+        people: "검사중"
+    });
 
     // FastAPI 서버에 POST 요청 보내기
     const response = await fetch('https://opencvproject-python-production.up.railway.app/check/', {
