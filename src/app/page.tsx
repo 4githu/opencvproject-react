@@ -102,8 +102,8 @@ const Frame = (): JSX.Element => {
           </div>
         </div>
         <div className = "text-[20px]">
-          <button onClick={() => {setImagePath("/open_yp.bmp"); setModalVisible(true)}}>이미지 1 </button>
-          <button onClick={() => {setImagePath("/open_np.bmp"); setModalVisible(true)}}> 이미지 2</button>
+          <button onClick={() => {setImagePath("open_yp.bmp"); setModalVisible(true)}}>이미지 1 </button>
+          <button onClick={() => {setImagePath("open_np.bmp"); setModalVisible(true)}}> 이미지 2</button>
         </div>
 
         <div className="absolute w-[987px] h-[628px] top-[345px] left-[100px] bg-[#fcddbe]">
@@ -122,11 +122,6 @@ const Frame = (): JSX.Element => {
           <div className="top-[490px] left-80 absolute w-[17px] h-[29px]" style={{ backgroundColor: boxColors["a606"] }} onClick={() => handleClick("a606")} />
         </div>
 
-        <div
-          className="absolute top-[1767px] left-[217px] w-[17px] h-[29px] bg-[#d9d9d9]"
-          aria-label="Rectangle"
-        />
-
         <div className="absolute w-[345px] h-[79px] top-[245px] left-[100px] bg-[#d9d9d9]">
           <div className="top-3.5 left-[66px] text-[40px] whitespace-nowrap absolute [font-family:'Inter-Regular',Helvetica] font-normal text-black tracking-[0] leading-[normal]">
             인원 {generalBoxColors.people} / {Object.keys(boxColors).length}
@@ -138,7 +133,7 @@ const Frame = (): JSX.Element => {
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-5 rounded">
             <h2>선택하신 이미지</h2>
-            <Image src={imagePath} alt="Selected" className="h-[50vh] w-auto" width={500} height={300} /> {/* 선택된 이미지 표시 */}
+            <Image src={'/{imagePath}'} alt="Selected" className="h-[50vh] w-auto" width={500} height={300} /> {/* 선택된 이미지 표시 */}
             <button onClick={() => setModalVisible(false)}>닫기</button>
           </div>
         </div>
