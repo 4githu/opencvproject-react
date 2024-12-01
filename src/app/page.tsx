@@ -69,7 +69,7 @@ const Frame = (): JSX.Element => {
 
     const newBoxColors: { [key: string]: string } = {}; // 객체로 정의
 
-    for (let i in data.ateendence) {
+    for (let i of data.ateendence) {
         newBoxColors[i] = data.ateendence[i] ? "#00ff00" : "#ff0000"; // 색상 업데이트
     }
 
