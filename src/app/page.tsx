@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Frame = (): JSX.Element => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [checkResult, setCheckResult] = useState(false);
   const [imagePath, setImagePath] = useState("open_yp.bmp");
   const [boxColors, setBoxColors] = useState({a605: "#d9d9d9", a606:  "#d9d9d9", a608: "#d9d9d9"}); // 색상 상태 객체 추가
   const [generalBoxColors, setGeneralBoxColors] = useState({"color" : 'bg-green-200', "text" : "시작버튼", "people" : 0}); 
@@ -67,7 +67,7 @@ const Frame = (): JSX.Element => {
       ...boxColors,
     };
 
-    for (let i in data.ateendence) {
+    for (const i = 0; i < data.ateendence.length; i++) {
         newBoxColors[i] = data.ateendence[i] ? "#00ff00" : "#ff0000"; // 색상 업데이트
     }
 
@@ -99,7 +99,7 @@ const Frame = (): JSX.Element => {
         </div>
 
         <div className="absolute w-[987px] h-[628px] top-[345px] left-[100px] bg-[#fcddbe]">
-          <img
+          <Image
             className="absolute w-[922px] h-[566px] top-[31px] left-[33px] object-cover"
             alt="Image"
             src="/독서실사진.jpg"
@@ -128,7 +128,7 @@ const Frame = (): JSX.Element => {
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-5 rounded">
             <h2>선택하신 이미지</h2>
-            <img src={imagePath} alt="Selected" className="h-[50vh] w-auto" /> {/* 선택된 이미지 표시 */}
+            <Image src={imagePath} alt="Selected" className="h-[50vh] w-auto" width={500} height={300} /> {/* 선택된 이미지 표시 */}
             <button onClick={() => setModalVisible(false)}>닫기</button>
           </div>
         </div>
