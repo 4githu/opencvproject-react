@@ -67,10 +67,10 @@ const Frame = (): JSX.Element => {
 
     console.log("data:", data);
 
-    const newBoxColors: { [key: string]: string } = {}; // 객체로 정의
+    const newBoxColors: string[] = []; // 또는 객체로 정의
 
-    for (let i of data.ateendence) {
-        newBoxColors[i] = data.ateendence[i] ? "#00ff00" : "#ff0000"; // 색상 업데이트
+    for (const item of data.ateendence) { // for...of 사용
+        newBoxColors.push(item ? "#00ff00" : "#ff0000"); // 색상 업데이트
     }
 
     setBoxColors(newBoxColors); // 상태 업데이트
