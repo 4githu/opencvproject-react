@@ -72,7 +72,7 @@ const Frame = (): JSX.Element => {
     }
 
     setBoxColors(newBoxColors); // 상태 업데이트
-    setGeneralBoxColors({"color" : "bg-green-200", "text" : data.howtogo, "people" : data.people});
+    setGeneralBoxColors({"color" : "bg-green-200", "text" : data.howtogo, "people" : String(data.people)});
   };
 
   return (
