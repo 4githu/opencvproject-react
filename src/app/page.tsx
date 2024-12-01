@@ -5,7 +5,7 @@ import Image from "next/image";
 const Frame = (): JSX.Element => {
   const [modalVisible, setModalVisible] = useState(false);
   const [imagePath, setImagePath] = useState("open_yp.bmp");
-  const [boxColors, setBoxColors] = useState({a605: "#d9d9d9", a606:  "#d9d9d9", a608: "#d9d9d9"}); // 색상 상태 객체 추가
+  const [boxColors, setBoxColors] = useState({"a605": "#d9d9d9", "a606":  "#d9d9d9", "a608": "#d9d9d9"}); // 색상 상태 객체 추가
   const [generalBoxColors, setGeneralBoxColors] = useState({"color" : 'bg-green-200', "text" : "시작버튼", "people" : "?"}); 
 
   const handleClick = async (id: string) => {
