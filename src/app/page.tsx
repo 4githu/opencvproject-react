@@ -67,7 +67,7 @@ const Frame = (): JSX.Element => {
       ...boxColors,
     };
 
-    for (const i = 0; i < data.ateendence.length; i++) {
+    for (let i = 0; i < data.ateendence.length; i++) {
         newBoxColors[i] = data.ateendence[i] ? "#00ff00" : "#ff0000"; // 색상 업데이트
     }
 
