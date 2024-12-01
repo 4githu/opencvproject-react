@@ -130,10 +130,10 @@ const Frame = (): JSX.Element => {
       </div>
 
       {modalVisible && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+        <div className="absolute top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-5 rounded">
             <h2>선택하신 이미지</h2>
-            <Image src={'/${imagePath}'} alt="Selected" className="h-[50vh] w-auto" width={500} height={300} /> {/* 선택된 이미지 표시 */}
+            <Image src={`/${imagePath}`} alt="Selected" className="h-[50vh] w-auto" width={500} height={300} /> {/* 선택된 이미지 표시 */}
             <button onClick={() => setModalVisible(false)}>닫기</button>
           </div>
         </div>
