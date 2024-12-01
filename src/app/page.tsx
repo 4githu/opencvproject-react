@@ -6,7 +6,7 @@ const Frame = (): JSX.Element => {
   const [modalVisible, setModalVisible] = useState(false);
   const [imagePath, setImagePath] = useState("open_yp.bmp");
   const [boxColors, setBoxColors] = useState({a605: "#d9d9d9", a606:  "#d9d9d9", a608: "#d9d9d9"}); // 색상 상태 객체 추가
-  const [generalBoxColors, setGeneralBoxColors] = useState({"color" : 'bg-green-200', "text" : "시작버튼", "people" : "모름"}); 
+  const [generalBoxColors, setGeneralBoxColors] = useState({"color" : 'bg-green-200', "text" : "시작버튼", "people" : "?"}); 
 
   const handleClick = async (id: string) => {
     console.log("클릭 이벤트 발생");
@@ -105,6 +105,8 @@ const Frame = (): JSX.Element => {
             className="absolute w-[922px] h-[566px] top-[31px] left-[33px] object-cover"
             alt="Image"
             src="/독서실사진.jpg"
+            width={500}
+            height={300}
           />
 
           <div className="top-[490px] left-[337px] absolute w-[17px] h-[29px]" style={{ backgroundColor: boxColors["a608"] }} onClick={() => handleClick("a608")} />
